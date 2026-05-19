@@ -68,10 +68,10 @@ export function createCountryCard({
 
         <div class="country-meta">
              <p><strong>Capitale:</strong> ${sanitizeHTML(country.capital)}</p>
-             <p>Regione:</strong> ${sanitizeHTML(country.region)}</p>
-             <p>Popolazione:</strong> ${sanitizeHTML(country.population)}</p>
-             <p>Area:</strong> ${sanitizeHTML(country.area)}</p>
-             <p>Densità:</strong> ${sanitizeHTML(country.densityLabel)}</p>
+             <p><strong>Regione:</strong> ${sanitizeHTML(country.region)}</p>
+             <p><strong>Popolazione:</strong> ${sanitizeHTML(country.population)}</p>
+             <p><strong>Area:</strong> ${sanitizeHTML(country.area)}</p>
+             <p><strong>Densità:</strong> ${sanitizeHTML(country.densityLabel)}</p>
         </div>
     `;
 
