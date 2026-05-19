@@ -99,6 +99,19 @@ function mapCountry(rawCountry) {
  */
 async function requestCountryList(url, errorPrefix) {
     // TODO 1: Implementare la fetch all'url passato come parametro
+
+    const risposta = await fetch(url);
+     if (risposta.status === 404) {
+    return [];
+  }
+    if (!risposta.ok) {
+    throw new Error(errorPrefix + " - Codice: " + risposta.status);
+  }
+  const dati = await risposta.json();
+  
+    return dati.map(mapCountry);
+
+
     // Poi passare i dati ricevuti alla funzione mapCountry per trasformarli
     // e restituire un array di nazioni semplificate.
     // Se la risposta non è ok, lanciare un errore con il messaggio passato in errorPrefix e lo status code.
@@ -169,8 +182,8 @@ export async function searchCountriesByName(name) {
  */
 export async function searchCountriesByCapital(capital) {
     const query = String(capital || "").trim();
-
-    if (query) {
+      //TODO DEBUGG (!)
+    if (!query) {
         return [];
     }
 

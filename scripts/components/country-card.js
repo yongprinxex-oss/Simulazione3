@@ -52,18 +52,26 @@ export function createCountryCard({
     // TODO 1: Completare il template HTML della card usando i dati del paese. Sanificare sempre i dati dinamici con sanitizeHTML.
     // Manca la bandiera che va messa come prima cosa nella card
     // Poi manca il name che deve essere mostrato in un paragrafo prima del code (classe country-title)
-    // Infine i dettagli come capital, region, population, area e densityLabel nella parte meta. (fai in modo di evidenziare il nome del campo, es: "Capitale: Roma")
+    // Infine i dettagli come capital, region, population, area e densityLabel nella parte meta. (fai in 
+    // modo di evidenziare il nome del campo, es: "Capitale: Roma")
     card.innerHTML = `
 
         <div class="country-header">
             <div>
-
+            
+             ${flag}
+                   <p class="country-title">${sanitizeHTML(country.name)}</p>
                 <p class="country-code">${sanitizeHTML(country.code)}</p>
             </div>
             ${favoriteButton}
         </div>
+
         <div class="country-meta">
-            
+             <p><strong>Capitale:</strong> ${sanitizeHTML(country.capital)}</p>
+             <p>Regione:</strong> ${sanitizeHTML(country.region)}</p>
+             <p>Popolazione:</strong> ${sanitizeHTML(country.population)}</p>
+             <p>Area:</strong> ${sanitizeHTML(country.area)}</p>
+             <p>Densità:</strong> ${sanitizeHTML(country.densityLabel)}</p>
         </div>
     `;
 
