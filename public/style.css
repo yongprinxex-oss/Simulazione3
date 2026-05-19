@@ -546,7 +546,7 @@ select {
 .records-table td {
     padding: 0.9rem;
     border-bottom: var(--border);  /*DONE*/
-    text-align: right;
+    text-align: left;
 }
 
 .records-table th {
